@@ -19,13 +19,15 @@ import androidx.compose.ui.unit.dp
 import com.example.gmailcloneui.GMailApp
 import com.example.gmailcloneui.R
 import com.example.gmailcloneui.ui.theme.GMailCloneUITheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 /**
  * Created by Patrick Adutwum on 13/10/2022.
  */
 
 @Composable
-fun HomeAppBar(){
+fun HomeAppBar(scaffoldState: ScaffoldState, scope: CoroutineScope){
     Box(modifier = Modifier.padding(10.dp)){
         Card(
             modifier = Modifier.requiredHeight(50.dp),
@@ -38,10 +40,18 @@ fun HomeAppBar(){
                     .fillMaxSize()
                     .padding(8.dp),
             ) {
-                Icon(Icons.Default.Menu, "Menu")
+                IconButton(onClick = {
+                    scope.launch{
+                        scaffoldState.drawerState.open()
+                    }
+                }) {
+                    Icon(Icons.Default.Menu, "Menu")
+                }
+
                 Text(text = "Search in emails", modifier = Modifier.weight(2.0f))
                 Image(painter = painterResource(id = R.drawable.img), contentDescription = "Profile Picture",
-                    modifier = Modifier.size(30.dp)
+                    modifier = Modifier
+                        .size(30.dp)
                         .clip(CircleShape)
                         .background(color = Color.Gray)
                 )

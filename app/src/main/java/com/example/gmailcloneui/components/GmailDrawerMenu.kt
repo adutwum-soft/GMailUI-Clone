@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.gmailcloneui.DrawerMenuData
+import com.example.gmailcloneui.models.DrawerMenuData
 
 /**
  * Created by Patrick Adutwum on 13/10/2022.

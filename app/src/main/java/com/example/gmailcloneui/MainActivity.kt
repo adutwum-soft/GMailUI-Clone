@@ -14,10 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.gmailcloneui.components.GmailDrawerMenu
-import com.example.gmailcloneui.components.HomeAppBar
-import com.example.gmailcloneui.components.HomeBottomMenu
-import com.example.gmailcloneui.components.MailList
+import com.example.gmailcloneui.components.*
 import com.example.gmailcloneui.ui.theme.GMailCloneUITheme
 //import androidx.compose.material3.Text as Text1
 
@@ -50,10 +47,10 @@ fun GMailApp() {
         scaffoldState = scaffoldState,
         drawerContent = { GmailDrawerMenu(scrollState) },
         topBar = { HomeAppBar(scaffoldState, coroutineScope) },
-        bottomBar = { HomeBottomMenu() }
-
+        bottomBar = { HomeBottomMenu() },
+        floatingActionButton = { GmailFab(scrollState) },
     ) {
-        MailList(it)
+        MailList(it, scrollState)
     }
 }
 

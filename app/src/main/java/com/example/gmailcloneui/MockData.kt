@@ -1,5 +1,6 @@
 package com.example.gmailcloneui
 
+import com.example.gmailcloneui.models.Account
 import com.example.gmailcloneui.models.MailData
 
 /**
@@ -111,8 +112,10 @@ val mailList = listOf(
         body = "December is less than 90 days away. If you haven't already, join over 250 people on Accrue who are saving \$1 every day till the end of the year and earning daily interest in dollars.",
         timeStamp = "20:19"
     ),
+)
 
-
-
-
+val accounts = listOf<Account>(
+    Account(icon = R.drawable.img, username = "kingcole", email = "kingcole@gmail.com", unReadMails = 69),
+    Account(username = "Sika", email = "sika@gmail.com", unReadMails = 700),
+    Account(username = "Pato", email = "pato@gmail.com", unReadMails = 23)
 )
